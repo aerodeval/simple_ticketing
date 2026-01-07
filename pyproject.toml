@@ -3,7 +3,7 @@ name = "simple_ticketing"
 authors = [
     { name = "Sydney", email = "sydney@frappe.io"}
 ]
-description = "[A[A[A[B[B"
+description = "simple ticket app"
 requires-python = ">=3.14"
 readme = "README.md"
 dynamic = ["version"]

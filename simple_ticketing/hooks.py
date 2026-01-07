@@ -1,7 +1,7 @@
 app_name = "simple_ticketing"
-app_title = "Simple Ticketing"
+app_title = "Simple Ticket"
 app_publisher = "Sydney"
-app_description = "[A[A[A[B[B"
+app_description = "simple ticket app"
 app_email = "sydney@frappe.io"
 app_license = "mit"
 
@@ -15,7 +15,7 @@ app_license = "mit"
 # 	{
 # 		"name": "simple_ticketing",
 # 		"logo": "/assets/simple_ticketing/logo.png",
-# 		"title": "Simple Ticketing",
+# 		"title": "Simple Ticket",
 # 		"route": "/simple_ticketing",
 # 		"has_permission": "simple_ticketing.api.permission.has_app_permission"
 # 	}

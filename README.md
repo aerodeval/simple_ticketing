@@ -1,6 +1,6 @@
-### Simple Ticketing
+### Simple Ticket
 
-[A[A[A[B[B
+simple ticket app
 
 ### Installation
 
