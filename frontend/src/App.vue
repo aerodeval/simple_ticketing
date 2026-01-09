@@ -6,7 +6,9 @@ import Header from "./components/Header.vue";
 	<Header />
 
 	<main class="p-[4rem]">
-		<SupportTickets></SupportTickets>
-	</main>
+		<!-- <SupportTickets></SupportTickets> -->
+		    <router-view />
 
+	</main>
+	
 </template>
