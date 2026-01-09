@@ -42,11 +42,11 @@
 					<div class="p-2">
 						<FormControl
 							type="select"
-					  :options="[
-    { label: 'Paper Quality', value: 'Paper Quality' },
-    { label: 'Delivery', value: 'Delivery' },
-    { label: 'Other', value: 'Other' },
-  ]"
+							:options="[
+								{ label: 'Paper Quality', value: 'Paper Quality' },
+								{ label: 'Delivery', value: 'Delivery' },
+								{ label: 'Other', value: 'Other' },
+							]"
 							size="sm"
 							variant="subtle"
 							placeholder="Ticket Category"
@@ -62,12 +62,27 @@
 							:ref_for="true"
 							size="sm"
 							variant="subtle"
-						placeholder="date of purchasing"
+							placeholder="date of purchasing"
 							:disabled="false"
-						label="Purchase Date"
+							label="Purchase Date"
 							v-model="dateValue"
 						/>
 					</div>
+					  
+
+
+
+			<div class="p-2">
+  <TextEditor
+    editor-class="prose-sm min-h-[4rem] border rounded-b-lg border-t-0 p-2"
+    v-model="textEditorInput"
+	
+    placeholder="Type something..."
+    @change="(val) => value = val"
+    :bubbleMenu="true"
+    :fixed-menu="true"
+  />
+</div>
 				</template>
 				<template #actions="{ close }">
 					<div>
@@ -98,11 +113,12 @@
 
 <script setup>
 import { computed, ref } from "vue";
-import { createListResource, ListView, Badge, Button, Dialog, FormControl } from "frappe-ui";
+import { createListResource, ListView, Badge, Button, Dialog, FormControl, TextEditor} from "frappe-ui";
 const dialog1 = ref(false);
 const inputValue = ref("");
 const dateValue = ref("");
 const selectValue = ref(null);
+const textEditorInput= ref("")
 const simple_columns = [
 	{ label: "Name", key: "name" },
 	{ label: "Category", key: "category" },
@@ -135,9 +151,11 @@ const tickets = createListResource({
 });
 
 const addTicket = (close) => {
-	  tickets.insert.submit({
+	tickets.insert.submit({
 		title: inputValue.value,
-		category: "Paper Quality",
+		category: selectValue.value,
+		purchase:dateValue.value,
+		description:textEditorInput
 	});
 
 	inputValue.value = "";
