@@ -97,6 +97,7 @@
 		:columns="simple_columns"
 		:rows="simple_rows"
 		:options="ListOptions"
+
 		row-key="name"
 	>
 		<template #cell="{ item, row, column }">
@@ -140,6 +141,10 @@ const ListOptions = {
 	emptyState: {
 		title: "No Support Tickets",
 	},
+	getRowRoute: (row) => ({
+      name: 'TicketDetailsPage',  
+      params: { name: row.name },
+    }),
 };
 
 const tickets = createListResource({
@@ -155,7 +160,7 @@ const addTicket = (close) => {
 		title: inputValue.value,
 		category: selectValue.value,
 		purchase:dateValue.value,
-		description:textEditorInput
+		description:textEditorInput.value
 	});
 
 	inputValue.value = "";
