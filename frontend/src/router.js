@@ -22,9 +22,14 @@ const routes = [
   },
 ]
 
+
+
 let router = createRouter({
   history: createWebHistory('/frontend'),
   routes,
 })
+
+
+
 
 export default router
